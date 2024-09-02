@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>connect status</title>
+    <!--    css file-->
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
+    <link href="css/solid.css" rel="stylesheet">
+    <link href="css/brands.css" rel="stylesheet">
+    <link href="css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--    mata tag-->
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="-1" http-equiv="expires">
+</head>
+<body $(if
+      advert-pending== class="w-100 vh-100 text-center body-2"
+'yes')
+onLoad="openAdvert()"
+$(endif)>
+
+<div class="login-container rounded-4  position-relative overflow-hidden">
+    <form action="$(link-logout)" name="logout" onsubmit="return openLogout()">
+        <div class="position-absolute start-0 top-0 w-100 h-100 p-4 overflow-y-scroll overflow-x-hidden rounded-4"
+             id="content">
+            $(if login-by == 'trial')
+            <h3 class="bg-primary my-0 mx-auto text-white rounded-3 fs-3 p-2 d-flex align-items-center justify-content-center gap-2 flex-row-reverse">
+                خوش آمدید
+            </h3>
+            $(elif login-by != 'mac')
+            <h3 class="bg-primary my-0 mx-auto text-white rounded-3 fs-3 p-2 d-flex align-items-center justify-content-center gap-2 flex-row-reverse">
+                خوش آمدید
+            </h3>
+            $(username)!
+            <br>
+            $(endif)
+            $(if session-time-left)
+            $(else)
+            $(endif)
+            $(if blocked == 'yes')
+            $(elif refresh-timeout)
+            $(endif)
+            <table class="table my-4">
+                <tr>
+                    <td class="fs-6 text-start">ادرس</td>
+                    <td class="fs-6 text-end" dir="ltr">$(ip)</td>
+                </tr>
+                <tr>
+                    <td class="fs-6 text-start">ارسالی/دریافتی</td>
+                    <td class="fs-6 text-end" dir="ltr">$(bytes-in-nice) / $(bytes-out-nice)</td>
+                </tr>
+                <tr>
+                    <td class="fs-6 text-start">زمان اتصال باقیمانده</td>
+                    <td class="fs-6 text-end" dir="ltr">$(session-time-left) / $(uptime)</td>
+                </tr>
+                <tr>
+                    <td class="fs-6 text-start">زمان اتصال</td>
+                    <td class="fs-6 text-end" dir="ltr">$(uptime)</td>
+                </tr>
+                <tr>
+                    <td class="fs-6 text-start text-green">وضعیت</td>
+                    <td class="fs-6 text-end" dir="ltr">
+                        <a href="$(link-advert)" style="color: #AAAAAA; text-decoration: none; font-size: 12px"
+                           target="hotspot_advert">advertisement</a>
+                        <span class="text-danger">required</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fs-6 text-start">بروزرسانی</td>
+                    <td class="fs-6 text-end" dir="ltr">$(refresh-timeout)</td>
+                </tr>
+            </table>
+            $(if login-by-mac != 'yes')
+            <button class="d-flex align-items-center justify-content-center gap-2 flex-row-reverse text-decoration-none text-white bg-danger rounded-3 fs-5 p-2 border-0 w-100"
+                    href=""
+                    type="submit">قطع اتصال
+                <i class="fas fa-sign-in"></i>
+            </button>
+            $(endif)
+        </div>
+    </form>
+    <div class="position-absolute start-0-0 top-0 w-100 h-100" id="back-shape">
+        <div class="shape1 position-absolute rounded-6"></div>
+        <div class="shape2 position-absolute rounded-6"></div>
+        <div class="shape3 position-absolute rounded-7"></div>
+        <div class="shape4 position-absolute rounded-7 bg-light"></div>
+    </div>
+</div>
+
+
+<!--js file-->
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/bootstrap.bundle.min.js"></script>
+<script language="JavaScript">
+    <!--
+    $(
+    if advert - pending == 'yes')
+        var popup = '';
+
+    function focusAdvert() {
+        if (window.focus) popup.focus();
+    }
+
+    function openAdvert() {
+        popup = open('$(link-advert)', 'hotspot_advert', '');
+        setTimeout("focusAdvert()", 1000);
+    }
+
+    $(endif)
+
+    function openLogout() {
+        if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=0,width=430,height=600');
+        window.close();
+        return false;
+    }
+
+    //-->
+</script>
+<script src="scripts/index.js"></script>
+</body>
+</html>

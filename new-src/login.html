@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <title>KianiTrade KianiTrade</title>
+    <!--    css file-->
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
+    <link href="css/solid.css" rel="stylesheet">
+    <link href="css/brands.css" rel="stylesheet">
+    <link href="css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--    meta tag-->
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <meta content="no-cache" http-equiv="pragma"/>
+    <meta content="-1" http-equiv="expires"/>
+    <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" name="viewport"/>
+    <meta charset="UTF-8">
+</head>
+<body class="w-100 vh-100 body-1">
+
+<div class="login-container rounded-4 overflow-hidden position-relative">
+
+    <div class="position-absolute start-0 top-0 w-100 h-100" id="content">
+        <form autocomplete="off" class="login-form ps-2 d-flex flex-column w-100" method="post" name="login" action="$(link-login-only)"
+              $(if chap-id) onSubmit="return doLogin()" $(endif)>
+        <a class="logo d-block" href="login.html">
+            <img alt="logo" class="ms-4 mt-2" src="images/Aloghesti-Logo-Vertical-1.2.1.png">
+        </a>
+        $(if trial == 'yes')
+        <div class="trial-btn">
+            <a class="text-decoration-none d-inline-block p-2 rounded-2 my-2 ms-1"
+               href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
+                <i class="fa fa-wifi fa-lg"></i> برای
+                اینترنت رایگان کلیک کنید
+            </a>
+        </div>
+        $(endif)
+            <div class="inp-box d-flex align-items-center justify-content-center position-relative">
+                <label for="user-name">
+                    <i class="fas fa-user"></i>
+                </label>
+                <input class="form-control border-0 ps-1 rounded-0 shadow-none bg-light" id="user-name" maxlength="200"
+                       minlength="2" name="user-name"
+                       placeholder="enter your username" required type="text">
+            </div>
+            <div class="inp-box d-flex align-items-center justify-content-center position-relative">
+                <label for="user-password">
+                    <i class="fas fa-lock"></i>
+                </label>
+                <input class="form-control border-0 ps-1 rounded-0 shadow-none bg-light" id="user-password"
+                       maxlength="30" minlength="8"
+                       name="user-password" placeholder="Enter your password" required
+                       type="password">
+            </div>
+            <button class="d-flex align-items-center justify-content-between p-1 px-4 fs-4 mt-2 bg-light"
+                    type="submit">ورود
+            </button>
+            <div class="about-box position-absolute bottom-0 end-0 text-white text-center">
+                <h6 class="m-3">Powered by KianiTrade</h6>
+            </div>
+
+            $(if error)
+            <div class="error-text position-fixed bg-light rounded-2 px-0 py-1 row">
+                <div class="col d-flex align-items-center">
+                    $(error)
+                </div>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                    <img alt="error" class="w-100" src="images/error-icon-25266.png">
+                </div>
+            </div>
+            $(endif)
+        </form>
+    </div>
+
+    <div class="position-absolute start-0-0 top-0 w-100 h-100" id="back-shape">
+        <div class="shape1 position-absolute rounded-6"></div>
+        <div class="shape2 position-absolute rounded-6"></div>
+        <div class="shape3 position-absolute rounded-7"></div>
+        <div class="shape4 position-absolute rounded-7 bg-light"></div>
+    </div>
+</div>
+
+<!--js file-->
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/bootstrap.bundle.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $(
+        if error) $('.log-status').addClass('wrong-entry');
+        $(endif)
+        $('.error-txt').fadeIn(1500);
+        setTimeout("$('.error-txt').fadeOut(1500);", 3000);
+
+    });
+</script>
+$(if chap-id)
+<form action="$(link-login-only)" method="post" name="sendin">
+    <input name="username" type="hidden"/>
+    <input name="password" type="hidden"/>
+    <input name="dst" type="hidden" value="$(link-orig)"/>
+    <input name="popup" type="hidden" value="true"/>
+</form>
+<script src="scripts/md5.js" type="text/javascript"></script>
+<script type="text/javascript">
+    <!--
+    function doLogin() {
+        document.sendin.username.value = document.login.username.value;
+        document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+        document.sendin.submit();
+        return false;
+    }
+
+    //-->
+</script>
+$(endif)
+
+<script src="scripts/index.js"></script>
+</body>
+</html>

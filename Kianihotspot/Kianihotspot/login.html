@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--META-->
+<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<title>KianiTrade KianiTrade</title>
+</head>
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+<!--STYLESHEETS-->
+<!--SCRIPTS-->
+
+<script src='js/jquery.min.js'></script>
+<script>
+  $(document).ready(function(){
+		$(if error) $('.log-status').addClass('wrong-entry');
+		$(endif)
+        $('.error-txt').fadeIn(1500);
+        setTimeout( "$('.error-txt').fadeOut(1500);",3000 );
+
+    });
+	</script>
+<body>
+<form name="login" class="login-form" action="$(link-login-only)" method="post" 
+			$(if chap-id) onSubmit="return doLogin()" $(endif)>
+			<center>
+			 <h3>KianiTrade</h2>
+<center>
+<img src="images\logo.png" width=150 />
+</center>
+		$(if trial == 'yes')<div class="trial-btn" ><a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"><i class="fa fa-wifi fa-lg"></i>  برای اینترنت رایگان کلیک کنید</a></div> <br>$(endif)
+    <div class="content">
+	<input type="hidden" name="dst" value="$(link-orig)" />
+	<input type="hidden" name="popup" value="true" />
+	<div class="form-group ">
+			<input name="username" type="text" placeholder="نام کاربری اینترنت خود را وارد نمائید " id="UserName" class="form-control"  onfocus="this.value=''" size="30" /><!--END USERNAME-->
+	       <i class="fa fa-user"></i>
+    </div>
+	<div class="form-group">
+	<input name="password" type="password" placeholder="رمز عبور اینترنت خود را وارد نمائید" id="Passwod"  $(if error) class="form-control" $(endif) class="form-control" onfocus="this.value=''" size="30" /><!--END PASSWORD-->
+	       <i class="fa fa-lock"></i>
+    </div>
+	<button  class="log-btn" type="submit">اتــصــال <i class="fa fa-sign-in fa-lg"></i></button>
+</br>
+<h5>Powered by KianiTrade</h4>
+<h6>09132778125 </h6>
+	<br>
+		$(if error)<div class="error-txt">
+	<a>$(error) <i class="fa fa-exclamation fa-lg"></i></a>
+	</div>$(endif)
+	</div>
+</form>
+</body>
+<script type="text/javascript">
+<!--
+document.login.username.focus();
+//-->
+</script>
+</html>

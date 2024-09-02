@@ -1,0 +1,375 @@
+@font-face {
+    font-family: 'BYekan';
+    src: url('../fonts/BYekan.eot');
+    src: url('../fonts/BYekan.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/BYekan.woff') format('woff'),
+    url('../fonts/BYekan.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h3, h4, h5, h6 {
+    color: #311D05;
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background: #95a5a6;
+    background-image: url(../images/dark_embroidery.png);
+
+    font-family: 'BYekan', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.login-form {
+    width: 350px;
+    padding: 40px 30px;
+    background-color: #eee;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.login-form h2 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 2em;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    color: #34495e;
+}
+
+.login-form:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: -webkit-linear-gradient(left, #27ae60 0%, #27ae60 20%, #8e44ad 20%, #8e44ad 40%, #3498db 40%, #3498db 60%, #e74c3c 60%, #e74c3c 80%, #f1c40f 80%, #f1c40f 100%);
+    background: -moz-linear-gradient(left, #27ae60 0%, #27ae60 20%, #8e44ad 20%, #8e44ad 40%, #3498db 40%, #3498db 60%, #e74c3c 60%, #e74c3c 80%, #f1c40f 80%, #f1c40f 100%);
+    height: 5px;
+    border-radius: 5px 5px 0 0;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    height: 50px;
+    border: none;
+    padding: 5px 7px 5px 15px;
+    background: #fff;
+    color: #666;
+    border: 2px solid #ddd;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    font-family: "byekan";
+    text-align: center;
+}
+
+.error {
+    width: 100%;
+    height: 50px;
+    border: none;
+    padding: 5px 7px 5px 15px;
+    background: #fff;
+    border: 2px solid #ed1c24;
+    color: #ed1c24;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-appearance: none;
+
+}
+
+.error:focus + .fa {
+    border-color: #ed1c24;
+    color: #ed1c24;
+}
+
+.form-control:focus, .form-control:focus + .fa {
+    border-color: #3498db;
+    color: #3498db;
+}
+
+.form-group .fa {
+    position: absolute;
+    right: 15px;
+    top: 17px;
+    color: #999;
+}
+
+.log-status.wrong-entry {
+    -moz-animation: wrong-log 0.3s;
+    -webkit-animation: wrong-log 0.3s;
+    animation: wrong-log 0.3s;
+}
+
+.log-status.wrong-entry .form-control, .wrong-entry .form-control + .fa {
+    border-color: #ed1c24;
+    color: #ed1c24;
+}
+
+.log-btn {
+    background: #311D05;
+    dispaly: inline-block;
+    width: 100%;
+    font-size: 16px;
+    height: 50px;
+    color: #fff;
+    font-family: 'BYekan';
+    text-decoration: none;
+    border: none;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.trial-btn {
+    text-align: center;
+    height: 50px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #ed1c24;
+    dispaly: inline-block;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: 0.5s ease all;
+    -webkit-appearance: none;
+
+
+}
+
+.trial-btn a {
+    font-family: 'BYekan';
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.error-txt {
+    text-align: center;
+    height: 50px;
+    display: block;
+    width: 80%;
+    font-family: 'BYekan';
+    padding: 10px;
+    border: none;
+    background: #ed1c24;
+    dispaly: inline-block;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 15px;
+    -moz-animation: wrong-log 0.3s;
+    -webkit-animation: wrong-log 0.3s;
+    animation: wrong-log 0.3s;
+    -webkit-appearance: none;
+}
+
+.error-txt a {
+    font-family: 'BYekan', Tahoma;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: none;
+    color: #C6C6C6;
+    float: right;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: #8C918F;
+}
+
+.alert {
+    display: none;
+    font-size: 12px;
+    color: #f00;
+    float: left;
+}
+
+@-moz-keyframes wrong-log {
+    0%, 100% {
+        left: 0px;
+    }
+    20%, 60% {
+        left: 15px;
+    }
+    40%, 80% {
+        left: -15px;
+    }
+}
+
+@-webkit-keyframes wrong-log {
+    0%, 100% {
+        left: 0px;
+    }
+    20%, 60% {
+        left: 15px;
+    }
+    40%, 80% {
+        left: -15px;
+    }
+}
+
+@keyframes wrong-log {
+    0%, 100% {
+        left: 0px;
+    }
+    20%, 60% {
+        left: 15px;
+    }
+    40%, 80% {
+        left: -15px;
+    }
+}
+
+#login-box {
+    width: 350px;
+    height: 450px;
+    background-color: rgba(34, 44, 50, 0.5);
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+#login-box:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: -webkit-linear-gradient(left, #27ae60 0%, #27ae60 20%, #8e44ad 20%, #8e44ad 40%, #3498db 40%, #3498db 60%, #e74c3c 60%, #e74c3c 80%, #f1c40f 80%, #f1c40f 100%);
+    background: -moz-linear-gradient(left, #27ae60 0%, #27ae60 20%, #8e44ad 20%, #8e44ad 40%, #3498db 40%, #3498db 60%, #e74c3c 60%, #e74c3c 80%, #f1c40f 80%, #f1c40f 100%);
+    height: 5px;
+    border-radius: 5px 5px 0 0;
+}
+
+#logout-box {
+    width: 350px;
+    height: 450px;
+    background-color: rgba(34, 44, 50, 0.5);
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+#logout-box:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: -webkit-linear-gradient(left, #27ae60 0%, #27ae60 20%, #8e44ad 20%, #8e44ad 40%, #3498db 40%, #3498db 60%, #e74c3c 60%, #e74c3c 80%, #f1c40f 80%, #f1c40f 100%);
+    background: -moz-linear-gradient(left, #27ae60 0%, #27ae60 20%, #8e44ad 20%, #8e44ad 40%, #3498db 40%, #3498db 60%, #e74c3c 60%, #e74c3c 80%, #f1c40f 80%, #f1c40f 100%);
+    height: 5px;
+    border-radius: 5px 5px 0 0;
+}
+
+.disconnect {
+    float: center;
+    padding: 8px 0 8px 0;
+    font-family: 'BYekan';
+    font-weight: 300;
+    font-size: 18px;
+    color: #ffffff;
+    background: #ed1c24;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+.redirect {
+    margin: 10px auto;
+    vertical-align: middle;
+    font-family: 'BYekan';
+    text-align: center;
+    margin-top: 20%;
+    height: 100%;
+}
+
+
+.logout-btn {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #ed1c24;
+    font-family: 'BYekan';
+    font-size: 18px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 15px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.loading a {
+    color: #fff;
+    text-decoration: none;
+}

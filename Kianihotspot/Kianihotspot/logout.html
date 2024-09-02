@@ -1,0 +1,55 @@
+﻿<html>
+<head>
+<title>شبکه > خروج</title>
+<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<script language="JavaScript">
+<!--
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+<div id="logout-box">
+<table width="100%" height="100%">
+
+<tr>
+<td align="center" valign="middle">
+&nbsp;<table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0">
+	<tr>
+		<td  class="disconnect" align="center"><font color="#FFFFFF">
+		<b>&#1575;&#1585;&#1578;&#1576;&#1575;&#1591; &#1588;&#1605;&#1575; &#1576;&#1575; &#1605;&#1608;&#1601;&#1602;&#1740;&#1578; &#1602;&#1591;&#1593; &#1588;&#1583;</b> 
+<i class="fa fa-times"></i>
+</font></td>
+	</tr>
+</table>
+<table class="tabula" border="1">  
+<tr><td align="left">$(username)</td><td align="right">&#1606;&#1575;&#1605; &#1705;&#1575;&#1585;&#1576;&#1585;&#1740;</td></tr>
+<tr><td align="left">$(ip)</td><td align="right">&#1570;&#1583;&#1585;&#1587;</td></tr>
+<tr><td align="left">$(mac)</td><td align="right">&#1570;&#1583;&#1585;&#1587; &#1605;&#1705;</td></tr>
+<tr><td align="left">$(uptime)</td><td align="right">&#1605;&#1583;&#1578; &#1586;&#1605;&#1575;&#1606;</td></tr>
+$(if session-time-left)
+<tr><td align="left">$(session-time-left)</td><td align="right">&#1586;&#1605;&#1575;&#1606; &#1576;&#1575;&#1602;&#1740;&#1605;&#1575;&#1606;&#1583;&#1607;</td></tr>
+$(endif)
+<tr><td align="left">$(bytes-in-nice) / $(bytes-out-nice)</td><td align="right">
+	&#1575;&#1585;&#1587;&#1575;&#1604;&#1740; / &#1583;&#1585;&#1740;&#1575;&#1601;&#1578;&#1740;</td></tr>
+</table>
+<br>
+<form action="$(link-login)" name="login" onSubmit="return openLogin()">
+<button class="log-btn" type="submit">اتصال	<i class="fa fa-sign-in fa-lg"></i></button>
+</form>
+</td>
+</table>
+</div>
+</body>
+</html>

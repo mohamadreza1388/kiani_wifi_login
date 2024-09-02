@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>logout</title>
+    <!--    css file-->
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
+    <link href="css/solid.css" rel="stylesheet">
+    <link href="css/brands.css" rel="stylesheet">
+    <link href="css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--    mata tag-->
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="-1" http-equiv="expires">
+</head>
+<body class="w-100 vh-100 body-2">
+
+<div class="login-container rounded-4 overflow-hidden position-relative">
+    <div class="position-absolute start-0 top-0 w-100 h-100 p-4" id="content">
+        <h3 class="bg-danger my-0 mx-auto text-white rounded-3 fs-5 p-3 d-flex align-items-center justify-content-center gap-2 flex-row-reverse">
+            ارتباط شما با موفقیت قطع شد
+            <i class="fas fa-close"></i>
+        </h3>
+        $(if session-time-left)
+        $(endif)
+        <table class="table my-4">
+            <tr>
+                <td class="fs-6 text-start">نام کاربری</td>
+                <td class="fs-6 text-end" dir="ltr">$(username)</td>
+            </tr>
+            <tr>
+                <td class="fs-6 text-start">آدرس</td>
+                <td class="fs-6 text-end" dir="ltr">$(ip)</td>
+            </tr>
+            <tr>
+                <td class="fs-6 text-start">آدرس مک</td>
+                <td class="fs-6 text-end" dir="ltr">$(mac)</td>
+            </tr>
+            <tr>
+                <td class="fs-6 text-start">مدت زمان</td>
+                <td class="fs-6 text-end" dir="ltr">$(uptime)</td>
+            </tr>
+            <tr>
+                <td class="fs-6 text-start">زمان باقیمانده</td>
+                <td class="fs-6 text-end" dir="ltr">$(session-time-left)</td>
+            </tr>
+            <tr>
+                <td class="fs-6 text-start">ارسالی دریافتی</td>
+                <td class="fs-6 text-end" dir="ltr">$(bytes-in-nice) / $(bytes-out-nice)</td>
+            </tr>
+        </table>
+
+        <form action="$(link-login)" name="login" onsubmit="return openLogin()">
+            <button class="log-btn d-flex align-items-center justify-content-center gap-2 flex-row-reverse text-decoration-none text-white bg-success rounded-3 fs-5 p-2 border-0 w-100"
+                    type="submit">اتصال <i class="fa fa-sign-in"></i></button>
+        </form>
+
+
+    </div>
+    <div class="position-absolute start-0-0 top-0 w-100 h-100" id="back-shape">
+        <div class="shape1 position-absolute rounded-6"></div>
+        <div class="shape2 position-absolute rounded-6"></div>
+        <div class="shape3 position-absolute rounded-7"></div>
+        <div class="shape4 position-absolute rounded-7 bg-light"></div>
+    </div>
+</div>
+
+
+<!--js file-->
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/bootstrap.bundle.min.js"></script>
+<script language="JavaScript">
+    <!--
+    function openLogin() {
+        if (window.name != 'hotspot_logout') return true;
+        open('$(link-login)', '_blank', '');
+        window.close();
+        return false;
+    }
+
+    //-->
+</script>
+<script src="scripts/index.js"></script>
+</body>
+</html>
